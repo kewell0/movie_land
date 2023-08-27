@@ -1,4 +1,5 @@
-# Getting Started with Create React App
+# filmwire-app
+A simplifiied version of the filmpire-project to implement some basic React functions.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
