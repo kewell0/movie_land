@@ -4,7 +4,7 @@ import "./App.css";
 import searchIcon from "./assets/Search.svg";
 import MovieCard from "./MovieCard";
 
-const API_URL = "http://www.omdbapi.com/?i=tt3896198&apikey=5cf43fd1";
+const API_URL = "https://www.omdbapi.com/?i=tt3896198&apikey=5cf43fd1";
 
 function App() {
   const [movies, setMovies] = useState([]);
@@ -15,8 +15,8 @@ function App() {
     const data = await response.json();
 
     setMovies(data.Search);
-
-    setMovieSearch("");
+    console.log(data);
+    // setMovieSearch("");
   };
 
   useEffect(() => {
@@ -28,7 +28,7 @@ function App() {
     <div className="app">
       <h1>MovieLand</h1>
 
-      <div className="search">
+      <form className="search" onSubmit={() => searchMovies(movieSearch)}>
         <input
           placeholder="Search for movies"
           value={movieSearch}
@@ -39,7 +39,7 @@ function App() {
           alt="search"
           onClick={() => searchMovies(movieSearch)}
         />
-      </div>
+      </form>
 
       {movies?.length > 0 ? (
         <div className="container">
