@@ -15,7 +15,7 @@ function App() {
     const data = await response.json();
 
     setMovies(data.Search);
-    console.log(data);
+
     setMovieSearch("");
   };
 
