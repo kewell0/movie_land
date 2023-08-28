@@ -28,7 +28,7 @@ function App() {
     <div className="app">
       <h1>MovieLand</h1>
 
-      <form className="search" onSubmit={() => searchMovies(movieSearch)}>
+      <div className="search">
         <input
           placeholder="Search for movies"
           value={movieSearch}
@@ -39,7 +39,7 @@ function App() {
           alt="search"
           onClick={() => searchMovies(movieSearch)}
         />
-      </form>
+      </div>
 
       {movies?.length > 0 ? (
         <div className="container">
