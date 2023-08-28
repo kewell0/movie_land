@@ -16,6 +16,7 @@ function App() {
 
     setMovies(data.Search);
     console.log(data);
+    setMovieSearch("");
   };
 
   useEffect(() => {
@@ -27,7 +28,7 @@ function App() {
     <div className="app">
       <h1>MovieLand</h1>
 
-      <div className="search">
+      <form className="search" onSubmit={() => searchMovies(movieSearch)}>
         <input
           placeholder="Search for movies"
           value={movieSearch}
@@ -38,7 +39,7 @@ function App() {
           alt="search"
           onClick={() => searchMovies(movieSearch)}
         />
-      </div>
+      </form>
 
       {movies?.length > 0 ? (
         <div className="container">
